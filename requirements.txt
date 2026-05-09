@@ -1,0 +1,6 @@
+ucimlrepo
+dvc
+scikit-learn
+pandas
+xgboost
+jupyter

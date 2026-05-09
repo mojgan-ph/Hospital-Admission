@@ -1,0 +1,27 @@
+stages:
+  split:
+    cmd: python -m src.split
+    deps:
+      - data/data
+    outs:
+      - data/split
+  train:
+    cmd: python -m src.train
+    deps:
+      - data/split
+    outs:
+      - data/train
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+      - data/split
+      - data/train
+    outs:
+      - data/evaluate
+  analyse:
+    cmd: python -m src.analyse
+    deps:
+      - data/split
+      - data/train
+    outs:
+      - data/analyse
