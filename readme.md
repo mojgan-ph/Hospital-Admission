@@ -10,4 +10,8 @@ Claude code prompts:
  - Change all categorical features using X[feature].astype("category").
 5- Update train.py to use load_dataset from utils module and train an xgboost classifier on the train set
 6- Update train.py to use validation set as well, with early stopping enabled
-7- Update split.py and utils.py to save the mapping of each categorical column to its full set of levels seen across the entire dataset (before splitting) and use it for data loading. 
+7- Update split.py and utils.py to save the mapping of each categorical column to its full set of levels seen across the entire dataset (before splitting) and use it for data loading.
+8- Write evaluate.py to evaluate the model using the test set and save the predictions and evaluation metrics in csv files
+9- Write analyse.py to do the following: 
+ - plot the feature importance of the model 
+ - plot the confusion matrix

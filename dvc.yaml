@@ -19,7 +19,7 @@ stages:
   analyse:
     cmd: python -m src.analyse
     deps:
-      - data/split
       - data/train
+      - data/evaluate
     outs:
       - data/analyse

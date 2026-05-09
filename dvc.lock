@@ -22,3 +22,41 @@ stages:
       md5: f6d3707be98697c2cec0b3bbf92e3b30.dir
       size: 872108
       nfiles: 1
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - path: data/split
+      hash: md5
+      md5: 2c6fe0d9329c848273fcebe780e65197.dir
+      size: 16525047
+      nfiles: 8
+    - path: data/train
+      hash: md5
+      md5: f6d3707be98697c2cec0b3bbf92e3b30.dir
+      size: 872108
+      nfiles: 1
+    outs:
+    - path: data/evaluate
+      hash: md5
+      md5: a5df19f1d815a8f67bdcd77ab7f669b1.dir
+      size: 388095
+      nfiles: 2
+  analyse:
+    cmd: python -m src.analyse
+    deps:
+    - path: data/evaluate
+      hash: md5
+      md5: a5df19f1d815a8f67bdcd77ab7f669b1.dir
+      size: 388095
+      nfiles: 2
+    - path: data/train
+      hash: md5
+      md5: f6d3707be98697c2cec0b3bbf92e3b30.dir
+      size: 872108
+      nfiles: 1
+    outs:
+    - path: data/analyse
+      hash: md5
+      md5: 466161efdfece71ac01a2373f60d1293.dir
+      size: 185454
+      nfiles: 2
