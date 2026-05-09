@@ -1,0 +1,24 @@
+schema: '2.0'
+stages:
+  split:
+    cmd: python -m src.split
+    outs:
+    - path: data/split
+      hash: md5
+      md5: 2c6fe0d9329c848273fcebe780e65197.dir
+      size: 16525047
+      nfiles: 8
+  train:
+    cmd: python -m src.train
+    deps:
+    - path: data/split
+      hash: md5
+      md5: 2c6fe0d9329c848273fcebe780e65197.dir
+      size: 16525047
+      nfiles: 8
+    outs:
+    - path: data/train
+      hash: md5
+      md5: f6d3707be98697c2cec0b3bbf92e3b30.dir
+      size: 872108
+      nfiles: 1

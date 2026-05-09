@@ -1,8 +1,6 @@
 stages:
   split:
     cmd: python -m src.split
-    deps:
-      - data/data
     outs:
       - data/split
   train:
