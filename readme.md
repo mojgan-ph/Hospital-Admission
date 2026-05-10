@@ -17,7 +17,8 @@ Claude code prompts:
  - plot the confusion matrix
 10- In evaluate.py, add code that creates ROC diagram
 11- How do I know what was the probability threshold of considering a prediction positive on ROC for each point on the diagram? can you at least add this information for each 0.1 increase of y axis?
-
+12- Update evaluate.py to generate metrics in form of a table, for all thresholds that are listed on the auc diagram, instead of current metrics that are saved in metrics.csv
+13- Update analyse.py to create the confusion matrix for two probability thresholds in separate files: 0.1 and 0.2 
 
 To run:
 - (recommended) make a virtual environment and activate it

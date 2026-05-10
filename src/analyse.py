@@ -23,10 +23,15 @@ if __name__ == '__main__':
     fig.savefig(OUTPUT_DIR / 'feature_importance.png', dpi=150)
     plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(6, 6))
-    ConfusionMatrixDisplay.from_predictions(
-        predictions['y_true'], predictions['y_pred'], ax=ax
-    )
-    fig.tight_layout()
-    fig.savefig(OUTPUT_DIR / 'confusion_matrix.png', dpi=150)
-    plt.close(fig)
+    for threshold in (0.1, 0.2):
+        y_pred_thr = (predictions['y_proba'] >= threshold).astype(int)
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ConfusionMatrixDisplay.from_predictions(
+            predictions['y_true'], y_pred_thr, ax=ax
+        )
+        ax.set_title(f'Confusion Matrix (threshold = {threshold})')
+        fig.tight_layout()
+        fig.savefig(
+            OUTPUT_DIR / f'confusion_matrix_thr_{threshold:.1f}.png', dpi=150
+        )
+        plt.close(fig)
