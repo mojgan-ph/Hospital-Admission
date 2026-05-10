@@ -38,9 +38,9 @@ stages:
     outs:
     - path: data/evaluate
       hash: md5
-      md5: a5df19f1d815a8f67bdcd77ab7f669b1.dir
-      size: 388095
-      nfiles: 2
+      md5: 4e1f7b685a9deb25624f15cdd471abe5.dir
+      size: 426070
+      nfiles: 3
   analyse:
     cmd: python -m src.analyse
     deps:

@@ -15,3 +15,11 @@ Claude code prompts:
 9- Write analyse.py to do the following: 
  - plot the feature importance of the model 
  - plot the confusion matrix
+10- In evaluate.py, add code that creates ROC diagram
+11- How do I know what was the probability threshold of considering a prediction positive on ROC for each point on the diagram? can you at least add this information for each 0.1 increase of y axis?
+
+
+To run:
+- (recommended) make a virtual environment and activate it
+- run command: pip install -r .\requirements.txt
+- run command: dvc repro
